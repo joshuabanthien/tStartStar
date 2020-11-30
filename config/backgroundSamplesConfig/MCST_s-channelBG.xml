@@ -6,8 +6,8 @@
 
 <!ENTITY OUTPUTdir           "/nfs/dust/cms/user/banthiey/tStartStar/Output/MonteCarlo/2016/">
 
-<!ENTITY TstarTstarToTgluonTgamma_M-1200_Run2016v3   SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/TstarTstar/MC_TstarTstarToTgammaTgluon_M-1200.xml">
 
+<!ENTITY ST_s-channel_inclusiveDecays_Run2016v3   SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_ST_s-channel_inclusiveDecays.xml">
 
 ]>
 
@@ -31,13 +31,12 @@
 
          <!-- tgtg -->
 
-        <InputData Lumi="35000" NEventsMax="-1" Type="MC" Version="TstarTstarToTgluonTgamma_M-1200_Run2016v3" Cacheable="False">
-	  &TstarTstarToTgluonTgamma_M-1200_Run2016v3;
+
+        <InputData Lumi="10199051" NEventsMax="-1" Type="MC" Version="ST_s-channel_inclusiveDecays_Run2016v3" Cacheable="False">
+        &ST_s-channel_inclusiveDecays_Run2016v3;
           <InputTree Name="AnalysisTree" />
           <OutputTree Name="AnalysisTree" />
         </InputData>
-
-
 
 
         <UserConfig>

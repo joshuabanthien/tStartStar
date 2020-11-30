@@ -1,6 +1,8 @@
-obj/tStartStarModule.o: src/tStartStarModule.cxx \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/AnalysisModule.h \
+obj/recoHists.o: src/recoHists.cxx \
+ /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/tStartStar/include/recoHists.h \
+ /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/Hists.h \
  /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/fwd.h \
+ /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/AnalysisModule.h \
  /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/obj.h \
  /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/registry.h \
  /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/GenericEvent.h \
@@ -174,13 +176,7 @@ obj/tStartStarModule.o: src/tStartStarModule.cxx \
  /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/PFParticle.h \
  /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/L1EGamma.h \
  /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/L1Jet.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/CommonModules.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/Selection.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/Utils.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/ObjectIdUtils.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/NSelections.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/JetIds.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TH2.h \
+ /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TH1F.h \
  /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TH1.h \
  /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TAxis.h \
  /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TAttAxis.h \
@@ -196,56 +192,5 @@ obj/tStartStarModule.o: src/tStartStarModule.cxx \
  /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/Foption.h \
  /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/Fit/FitExecutionPolicy.h \
  /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TFitResultPtr.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TFile.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TDirectoryFile.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TDirectory.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TBuffer.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TList.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TSeqCollection.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TCollection.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TIterator.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TVirtualRWMutex.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TVirtualMutex.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TDatime.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TUUID.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TMap.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/THashTable.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TUrl.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/ROOT/TRWSpinLock.hxx \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/ROOT/TSpinMutex.hxx \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/JetCorrections.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/Utils.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/JetMETObjects/interface/JetCorrectionUncertainty.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/JetMETObjects/interface/JetResolution.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/JetMETObjects/interface/JetResolutionObject.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TFormula.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TBits.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TObjArray.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TMethodCall.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TDictionary.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/ESTLType.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TInterpreter.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/Math/Types.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/RConfigure.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/Rtypes.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/JetCorrectionSets.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TRandom.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/Math/TRandomEngine.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TF1.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TFormula.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TROOT.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TF1AbsComposition.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/Math/Types.h \
- /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/Math/ParamFunctor.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/CleaningModules.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/YearRunSwitchers.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/ElectronHists.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/core/include/Hists.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/tStartStar/include/tStartStarSelections.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/tStartStar/include/tStartStarHists.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/tStartStar/include/genHists.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/tStartStar/include/recoHists.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/PhotonIds.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/MuonIds.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/ElectronIds.h \
- /nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/include/TriggerSelection.h
+ /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TH2F.h \
+ /cvmfs/cms.cern.ch/slc6_amd64_gcc700/cms/cmssw/CMSSW_10_2_16/external/slc6_amd64_gcc700/bin/../../../../../../../slc6_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include/TH2.h
