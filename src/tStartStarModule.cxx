@@ -15,7 +15,7 @@
 #include "UHH2/common/include/MuonIds.h"
 #include "UHH2/common/include/ElectronIds.h"
 #include "UHH2/common/include/TriggerSelection.h"
-
+#include <UHH2/common/include/TTbarGen.h>
 
 using namespace std;
 using namespace uhh2;
@@ -35,12 +35,18 @@ public:
 
 private:
 
+    bool is_mc;
+
     std::unique_ptr<CommonModules> common;
 
     std::unique_ptr<JetCleaner> jetcleaner;
+    std::unique_ptr<TopJetCleaner> HOTVRcleaner;
 
     std::unique_ptr<Selection> electronTrigger;
     std::unique_ptr<Selection> muonTrigger;
+
+    std::unique_ptr<uhh2::AnalysisModule> ttgenprod;
+    uhh2::Event::Handle<TTbarGen> h_ttbargen;
     // declare the Selections to use. Use unique_ptr to ensure automatic call of delete in the destructor,
     // to avoid memory leaks.
 
@@ -55,6 +61,8 @@ private:
     std::unique_ptr<Hists> gen_lepsel;
     std::unique_ptr<Hists> reco_phosel;
     std::unique_ptr<Hists> gen_phosel;
+    std::unique_ptr<Hists> reco_btag;
+    std::unique_ptr<Hists> gen_btag;
     std::unique_ptr<Hists> reco_jetsel;
     std::unique_ptr<Hists> gen_jetsel;
 };
@@ -81,12 +89,17 @@ tStartStarModule::tStartStarModule(Context & ctx){
 
     // 1. setup other modules. CommonModules and the JetCleaner:
     common.reset(new CommonModules());
-
+    HOTVRcleaner.reset(new TopJetCleaner(ctx, PtEtaCut(150.0, 2.4)));
 
 
     common->switch_metcorrection();
     common->switch_jetlepcleaner();
     common->switch_jetPtSorter();
+
+    is_mc = ctx.get("dataset_type") == "MC";
+    if(is_mc){ttgenprod.reset(new TTbarGenProducer(ctx, "ttbargen", false)); }
+
+
 
     double jet_pt(30.);
     common->set_jet_id(AndId<Jet>(PtEtaCut(jet_pt, 2.4), JetPFID(JetPFID::WP_TIGHT_PUPPI)));
@@ -102,8 +115,8 @@ tStartStarModule::tStartStarModule(Context & ctx){
     //    muID = MuonID(Muon::CutBasedIdTight);
         common->set_muon_id(AndId<Muon>(PtEtaCut(muon_pt, 2.4), muID));
 
-    PhotonId phoID = PhotonTagID(Photon::mvaPhoID_Fall17_iso_V2_wp90);
-        common->set_photon_id(AndId<Photon>(PtEtaCut(20., 2.4), phoID));
+    PhotonId phoID = PhotonTagID(Photon::cutBasedPhotonID_Spring16_V2p2_loose);
+        common->set_photon_id(AndId<Photon>(PtEtaCut(0., 2.4), phoID));
 
     common->init(ctx);
 
@@ -131,8 +144,13 @@ tStartStarModule::tStartStarModule(Context & ctx){
     gen_lepsel.reset(new genHists(ctx, "genlepsel"));
     reco_phosel.reset(new recoHists(ctx, "recophosel"));
     gen_phosel.reset(new genHists(ctx, "genphosel"));
+    reco_btag.reset(new recoHists(ctx, "recobTag"));
+    gen_btag.reset(new genHists(ctx, "genbTag"));
     reco_jetsel.reset(new recoHists(ctx, "recojetsel"));
     gen_jetsel.reset(new genHists(ctx, "genjetsel"));
+
+
+
 }
 
 
@@ -152,16 +170,27 @@ bool tStartStarModule::process(Event & event) {
     // 1. run all modules other modules.
     // Note that it returns a bool, that may be False
     // (e.g. Golden JSON, MET filters), and therefore user should return early
+
+    if(is_mc){ ttgenprod->process(event); }
+
+
+
     reco_nocuts->fill(event);
     gen_nocuts->fill(event);
 
+    //common modules
+
     bool commonResult = common->process(event);
     if (!commonResult) return false;
-    // jetcleaner->process(event);
 
-    // 2. test selections and fill histograms
+    bool HOTVRresult = HOTVRcleaner->process(event);
+    if (!HOTVRresult) return false;
+
     reco_CM->fill(event);
     gen_CM->fill(event);
+
+
+    //trigger
 
 
     bool pass_trigger = (electronTrigger->passes(event) || muonTrigger->passes(event));
@@ -171,12 +200,17 @@ bool tStartStarModule::process(Event & event) {
     gen_triggers->fill(event);
 
 
+    //lepton selection
+
+
     const bool pass_lep1 = (((event.muons->size() == 1) || (event.electrons->size() == 1)) && (event.electrons->size()+event.muons->size()) == 1);
     if(!pass_lep1) return false;
 
-
     reco_lepsel->fill(event);
     gen_lepsel->fill(event);
+
+
+    //photon selection
 
 
     const bool pass_pho1 = (event.photons->size() == 1);
@@ -185,11 +219,43 @@ bool tStartStarModule::process(Event & event) {
     reco_phosel->fill(event);
     gen_phosel->fill(event);
 
-    bool pass_njet = (event.jets->size() >= 2);
+
+    //njets cut
+
+
+    bool pass_njet = (event.jets->size() >= 4);
     if(!pass_njet) return false;
+
+    bool pass_pTjet1 = (event.jets->at(0).pt() > 200);
+    if(!pass_pTjet1) return false;
+
+    bool pass_ntopjet = (event.topjets->size() > 0);
+    if(!pass_ntopjet) return false;
+
+    bool pass_pTtopjet1 = (event.topjets->at(0).pt() > 300);
+    if(!pass_pTtopjet1) return false;
 
     reco_jetsel->fill(event);
     gen_jetsel->fill(event);
+
+
+    //btag cut
+
+
+    std::vector<Jet> Bjets;
+
+    for (const Jet & thisjet : *event.jets){
+      if(thisjet.btag_DeepCSV() > 0.22){
+        Bjets.push_back(thisjet);
+      }
+    }
+
+    int nbTagJets = Bjets.size();
+    if(nbTagJets < 2) return false;
+
+    reco_btag->fill(event);
+    gen_btag->fill(event);
+
 
     // 3. decide whether or not to keep the current event in the output:
     return true;

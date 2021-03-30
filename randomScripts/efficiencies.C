@@ -33,19 +33,19 @@ void efficiencies(TString suffix = ""){
   // Drawing Definitions
   TCanvas *canvas = new TCanvas("chist", "c", w, h);
   //TLegend *leg = new TLegend(0.22,0.175,0.5,0.33);
-  TLegend *leg = new TLegend(0.45,0.755,0.825,0.88);
+  TLegend *leg = new TLegend(0.25,0.21,0.625,0.335);
   canvas->SetLogy();
   leg->SetNColumns(2);
 
   // Defining paths
-  TString pathPresel = "/nfs/dust/cms/user/banthiey/tStartStar/Output/MonteCarlo/2016/";
+  TString pathPresel = "/nfs/dust/cms/user/banthiey/tStartStarV3/Output/DataAndMonteCarlo/";
   TString pathSel = "";
   TString pathReco = "";
   TString fileprefix = "uhh2.AnalysisModuleRunner.MC.";
   TString histname = "N_jets";
 
   // Defining Steps
-  std::vector<TString> preselSteps = {"recoCM", "recoTriggers", "recolepsel", "recophosel", "recojetsel"};
+  std::vector<TString> preselSteps = {"recoTriggers", "recolepsel", "recophosel", "recojetsel", "recobTag"};
   std::vector<TString> selSteps = {};
   std::vector<TString> recoSteps = {};
   int stepcount = preselSteps.size() + selSteps.size() + recoSteps.size();
@@ -65,18 +65,18 @@ void efficiencies(TString suffix = ""){
 
 
   // Defining Samples
-  std::vector<TString> signalSamples = {"TstarTstar_M-1100.root", "TstarTstar_M-700.root"};
-  std::vector<TString> BGSamples = {"TTJets.root", "ST.root", "WJets.root", "VV.root"};
+  std::vector<TString> signalSamples = {"TstarTstarToTgluonTgamma_M-1100_Run2016v3.root", "TstarTstarToTgluonTgamma_M-800_Run2016v3.root"};
+  std::vector<TString> BGSamples = {"TTJets.root", "ST.root", "WJets.root", "VV.root", "QCD.root", "DYJets.root"};
   //std::vector<TString> BGSamples = {};
 
   std::vector<TString> signal_labels = {"Tstar M-1100", "Tstar M-700"};
-  std::vector<TString> BG_labels = {"TTJets", "ST", "WJets", "VV"};
+  std::vector<TString> BG_labels = {"TTJets", "ST", "WJets", "VV", "QCD", "DY"};
 
   // Defining Drawing options
   std::vector<int> colors_Signal = {1, 1};
   std::vector<int> line_Signal = {2, 3};
-  std::vector<int> colors_BG = {810, 800, 600, 500};
-  std::vector<TString> labels = {"Common", "Lepton Trigger", "Lepton Selection", "Photon Selection", "Jet Selection", "should not be visible"};
+  std::vector<int> colors_BG = {810, 800, 600, 416, 867, 880};
+  std::vector<TString> labels = {"Lepton Trigger", "Lepton Selection", "Photon Selection", "Jet Selection", "btagginess Selection", "should not be visible"};
 
   // ########################
   // ## Finish Definitions ##
@@ -206,7 +206,7 @@ void efficiencies(TString suffix = ""){
     hist->SetLineColor(colors_BG.at(index_draw_BG));
     hist->GetYaxis()->SetTitle("Efficiency");
     if(index_draw_BG == 0){
-      hist->SetMinimum(1e-3);
+      hist->SetMinimum(1e-7);
       hist->Draw();
     }
     else hist->Draw("same");
@@ -262,7 +262,7 @@ void efficiencies(TString suffix = ""){
   int index_sample = 0;
   for(const auto & sample : signalSamples){
     double pre_ttag = cutflow_Signal.at(index_sample)->GetBinContent(0);
-    double post_ttag = cutflow_Signal.at(index_sample)->GetBinContent(5);
+    double post_ttag = cutflow_Signal.at(index_sample)->GetBinContent(3);
     cout << "For " << sample << " the efficiency is " << post_ttag/pre_ttag << endl;
     index_sample++;
   }

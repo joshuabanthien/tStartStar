@@ -4,7 +4,7 @@
 <!ENTITY b_Cacheable     "False">
 <!ENTITY NEVT            "-1">
 
-<!ENTITY OUTPUTdir           "/nfs/dust/cms/user/banthiey/tStartStar/Output/MonteCarlo/2016">
+<!ENTITY OUTPUTdir           "/nfs/dust/cms/user/banthiey/tStartStarV3/Output/MonteCarlo/2016">
 
 
 <!ENTITY WJetsToLNu_Pt-100To250_Run2016v3   SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_WJetsToLNu_Pt-100To250.xml">
@@ -48,7 +48,7 @@
           <OutputTree Name="AnalysisTree" />
         </InputData>
 
-        <InputData Lumi="24351478.64" NEventsMax="-1" Type="MC" Version="WJetsToLNu_Pt-400To600_Run2016v3" Cacheable="False">
+        <InputData Lumi="3857595.748" NEventsMax="-1" Type="MC" Version="WJetsToLNu_Pt-400To600_Run2016v3" Cacheable="False">
         &WJetsToLNu_Pt-400To600_Run2016v3;
           <InputTree Name="AnalysisTree" />
           <OutputTree Name="AnalysisTree" />

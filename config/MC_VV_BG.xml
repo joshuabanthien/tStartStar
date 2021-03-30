@@ -4,7 +4,7 @@
 <!ENTITY b_Cacheable     "False">
 <!ENTITY NEVT            "-1">
 
-<!ENTITY OUTPUTdir           "/nfs/dust/cms/user/banthiey/tStartStar/Output/MonteCarlo/2016">
+<!ENTITY OUTPUTdir           "/nfs/dust/cms/user/banthiey/tStartStarV3/Output/MonteCarlo/2016">
 
 
 <!ENTITY WWToLNuQQ_Run2016v3   SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_WWToLNuQQ.xml">

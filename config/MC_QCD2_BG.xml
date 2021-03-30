@@ -7,12 +7,15 @@
 <!ENTITY OUTPUTdir           "/nfs/dust/cms/user/banthiey/tStartStarV3/Output/MonteCarlo/2016">
 
 
-<!ENTITY ST_s-channel_inclusiveDecays_Run2016v3                           SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_ST_s-channel_inclusiveDecays.xml">
-<!ENTITY ST_t-channel_top_inclusiveDecays_Run2016v3                       SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_ST_t-channel_top_inclusiveDecays.xml">
-<!ENTITY ST_t-channel_antitop_inclusiveDecays_Run2016v3                   SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_ST_t-channel_antitop_inclusiveDecays.xml">
-<!ENTITY ST_tW_top_NoFullyHadronicDecays_P8M1_PUMoriond17_Run2016v3       SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_ST_tW_top_NoFullyHadronicDecays_P8M1_PUMoriond17.xml">
-<!ENTITY ST_tW_antitop_NoFullyHadronicDecays_P8M1_PUMoriond17_Run2016v3   SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_ST_tW_antitop_NoFullyHadronicDecays_P8M1_PUMoriond17.xml">
-
+<!ENTITY QCD_HT50to100_Run2016v3      SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_QCD_HT50to100.xml">
+<!ENTITY QCD_HT100to200_Run2016v3     SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_QCD_HT100to200.xml">
+<!ENTITY QCD_HT200to300_Run2016v3     SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_QCD_HT200to300.xml">
+<!ENTITY QCD_HT300to500_Run2016v3     SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_QCD_HT300to500.xml">
+<!ENTITY QCD_HT500to700_Run2016v3     SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_QCD_HT500to700.xml">
+<!ENTITY QCD_HT700to1000_Run2016v3    SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_QCD_HT700to1000.xml">
+<!ENTITY QCD_HT1000to1500_Run2016v3   SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_QCD_HT1000to1500.xml">
+<!ENTITY QCD_HT1500to2000_Run2016v3   SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_QCD_HT1500to2000.xml">
+<!ENTITY QCD_HT2000toInf_Run2016v3    SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_QCD_HT2000toInf.xml">
 
 ]>
 
@@ -37,35 +40,60 @@
          <!-- tgtg -->
 
 
-        <InputData Lumi="2911582.981" NEventsMax="-1" Type="MC" Version="MC_ST_s-channel_inclusiveDecays_Run2016v3" Cacheable="False">
-        &ST_s-channel_inclusiveDecays_Run2016v3;
+        <InputData Lumi="0.01695242903" NEventsMax="-1" Type="MC" Version="MC_QCD_HT50to100_Run2016v3" Cacheable="False">
+        &QCD_HT50to100_Run2016v3;
           <InputTree Name="AnalysisTree" />
           <OutputTree Name="AnalysisTree" />
         </InputData>
 
-        <InputData Lumi="477843.6995" NEventsMax="-1" Type="MC" Version="MC_ST_t-channel_top_inclusiveDecays_Run2016v3" Cacheable="False">
-        &ST_t-channel_top_inclusiveDecays_Run2016v3;
+        <InputData Lumi="2.914202787" NEventsMax="-1" Type="MC" Version="MC_QCD_HT100to200_Run2016v3" Cacheable="False">
+        &QCD_HT100to200_Run2016v3;
           <InputTree Name="AnalysisTree" />
           <OutputTree Name="AnalysisTree" />
         </InputData>
 
-        <InputData Lumi="477080.5312" NEventsMax="-1" Type="MC" Version="MC_ST_t-channel_antitop_inclusiveDecays_Run2016v3" Cacheable="False">
-        &ST_t-channel_antitop_inclusiveDecays_Run2016v3;
+        <InputData Lumi="33.12492699" NEventsMax="-1" Type="MC" Version="MC_QCD_HT200to300_Run2016v3" Cacheable="False">
+        &QCD_HT200to300_Run2016v3;
           <InputTree Name="AnalysisTree" />
           <OutputTree Name="AnalysisTree" />
         </InputData>
 
-        <InputData Lumi="443519.4977" NEventsMax="-1" Type="MC" Version="MC_ST_tW_top_NoFullyHadronicDecays_P8M1_PUMoriond17_Run2016v3" Cacheable="False">
-        &ST_tW_top_NoFullyHadronicDecays_P8M1_PUMoriond17_Run2016v3;
+        <InputData Lumi="152.707843" NEventsMax="-1" Type="MC" Version="MC_QCD_HT300to500_Run2016v3" Cacheable="False">
+        &QCD_HT300to500_Run2016v3;
           <InputTree Name="AnalysisTree" />
           <OutputTree Name="AnalysisTree" />
         </InputData>
 
-        <InputData Lumi="443521.8477" NEventsMax="-1" Type="MC" Version="MC_ST_tW_antitop_NoFullyHadronicDecays_P8M1_PUMoriond17_Run2016v3" Cacheable="False">
-        &ST_tW_antitop_NoFullyHadronicDecays_P8M1_PUMoriond17_Run2016v3;
+        <InputData Lumi="1648.17919" NEventsMax="-1" Type="MC" Version="MC_QCD_HT500to700_Run2016v3" Cacheable="False">
+        &QCD_HT500to700_Run2016v3;
           <InputTree Name="AnalysisTree" />
           <OutputTree Name="AnalysisTree" />
         </InputData>
+
+        <InputData Lumi="5378.647343" NEventsMax="-1" Type="MC" Version="MC_QCD_HT700to1000_Run2016v3" Cacheable="False">
+        &QCD_HT700to1000_Run2016v3;
+          <InputTree Name="AnalysisTree" />
+          <OutputTree Name="AnalysisTree" />
+        </InputData>
+
+        <InputData Lumi="12602.26926" NEventsMax="-1" Type="MC" Version="MC_QCD_HT1000to1500_Run2016v3" Cacheable="False">
+        &QCD_HT1000to1500_Run2016v3;
+          <InputTree Name="AnalysisTree" />
+          <OutputTree Name="AnalysisTree" />
+        </InputData>
+
+        <InputData Lumi="98743.59466" NEventsMax="-1" Type="MC" Version="MC_QCD_HT1500to2000_Run2016v3" Cacheable="False">
+        &QCD_HT1500to2000_Run2016v3;
+          <InputTree Name="AnalysisTree" />
+          <OutputTree Name="AnalysisTree" />
+        </InputData>
+
+        <InputData Lumi="235651.7036" NEventsMax="-1" Type="MC" Version="MC_QCD_HT2000toInf_Run2016v3" Cacheable="False">
+        &QCD_HT2000toInf_Run2016v3;
+          <InputTree Name="AnalysisTree" />
+          <OutputTree Name="AnalysisTree" />
+        </InputData>
+
 
 
         <UserConfig>
@@ -82,7 +110,7 @@
 	    <!--<Item Name="TopPuppiJetCollection"   Value="jetsAk8PuppiSubstructure_SoftDropPuppi"/> -->
 	    <Item Name="METName"                 Value="slimmedMETsPuppi"/>
 	    <Item Name="genMETName"              Value="slimmedMETs_GenMET"/>
-	    <Item Name="lumi_file" Value="/nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/data/2016/Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.root"/>
+	    <Item Name="lumi_file" Value="/nfs/dust/cms/user/banthiey/tStartStarV3/CMSSW_10_2_17/src/UHH2/common/data/2016/Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.root"/>
 	    <Item Name="lumihists_lumi_per_bin" Value="500.0"/>
 
 	    <Item Name="jersmear_direction" Value="nominal"/>

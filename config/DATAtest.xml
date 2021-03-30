@@ -4,16 +4,18 @@
 <!ENTITY b_Cacheable     "False">
 <!ENTITY NEVT            "-1">
 
-<!ENTITY OUTPUTdir           "/nfs/dust/cms/user/banthiey/tStartStar/Output/MonteCarlo/2016/">
+<!ENTITY OUTPUTdir           "/nfs/dust/cms/user/banthiey/tStartStarV3/Output/Data/2016">
 
 
-<!ENTITY ST_s-channel_inclusiveDecays_Run2016v3   SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_ST_s-channel_inclusiveDecays.xml">
+<!ENTITY SingleMuon2016_RunC_2016v3   SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/DATA_SingleMuon2016_RunC.xml">
+
+
 
 ]>
 
 <!--
 <ConfigParse NEventsBreak="0" LastBreak="0" FileSplit="35" AutoResubmit="100"/>
-<ConfigSGE RAM="2" DISK="2" Mail="yannic.joshua.banthien@desy.de" Notification="as" Workdir="workdir_MonteCarlo_TstarTstar_2016v3"/>
+<ConfigSGE RAM="2" DISK="2" Mail="yannic.joshua.banthien@desy.de" Notification="as" Workdir="workdir_Data_2016v3"/>
 -->
 
 <!-- OutputLevel controls which messages are printed; set to VERBOSE or DEBUG for more verbosity, to WARNING or ERROR for less -->
@@ -32,11 +34,14 @@
          <!-- tgtg -->
 
 
-        <InputData Lumi="10199051" NEventsMax="-1" Type="MC" Version="ST_s-channel_inclusiveDecays_Run2016v3" Cacheable="False">
-        &ST_s-channel_inclusiveDecays_Run2016v3;
+        <InputData Lumi="1" NEventsMax="-1" Type="DATA" Version="SingleMuon2016_RunC_2016v3" Cacheable="False">
+        &SingleMuon2016_RunC_2016v3;
           <InputTree Name="AnalysisTree" />
           <OutputTree Name="AnalysisTree" />
         </InputData>
+
+
+
 
 
         <UserConfig>
@@ -53,7 +58,7 @@
 	    <!--<Item Name="TopPuppiJetCollection"   Value="jetsAk8PuppiSubstructure_SoftDropPuppi"/> -->
 	    <Item Name="METName"                 Value="slimmedMETsPuppi"/>
 	    <Item Name="genMETName"              Value="slimmedMETs_GenMET"/>
-	    <Item Name="lumi_file" Value="/nfs/dust/cms/user/banthiey/tStartStar/CMSSW_10_2_16/src/UHH2/common/data/2016/Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.root"/>
+	    <Item Name="lumi_file" Value="/nfs/dust/cms/user/banthiey/tStartStarV3/CMSSW_10_2_17/src/UHH2/common/data/2016/Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.root"/>
 	    <Item Name="lumihists_lumi_per_bin" Value="500.0"/>
 
 	    <Item Name="jersmear_direction" Value="nominal"/>

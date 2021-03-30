@@ -4,10 +4,17 @@
 <!ENTITY b_Cacheable     "False">
 <!ENTITY NEVT            "-1">
 
-<!ENTITY OUTPUTdir           "/nfs/dust/cms/user/banthiey/tStartStar/Output/MonteCarlo/2016/">
+<!ENTITY OUTPUTdir           "/nfs/dust/cms/user/banthiey/tStartStarV3/Output/MonteCarlo/2016">
 
 
-<!ENTITY TTJets_TuneCUETP8M1_Run2016v3   SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_TTJets_TuneCUETP8M1.xml">
+<!ENTITY DYJetsToLL_M-50_HT-70to100_Run2016v3        SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_DYJetsToLL_M-50_HT-70to100.xml">
+<!ENTITY DYJetsToLL_M-50_HT-100to200_Run2016v3       SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_DYJetsToLL_M-50_HT-100to200.xml">
+<!ENTITY DYJetsToLL_M-50_HT-200to400_Run2016v3       SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_DYJetsToLL_M-50_HT-200to400.xml">
+<!ENTITY DYJetsToLL_M-50_HT-400to600_Run2016v3       SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_DYJetsToLL_M-50_HT-400to600.xml">
+<!ENTITY DYJetsToLL_M-50_HT-600to800_Run2016v3       SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_DYJetsToLL_M-50_HT-600to800.xml">
+<!ENTITY DYJetsToLL_M-50_HT-800to1200_Run2016v3      SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_DYJetsToLL_M-50_HT-800to1200.xml">
+<!ENTITY DYJetsToLL_M-50_HT-1200to2500_Run2016v3     SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_DYJetsToLL_M-50_HT-1200to2500.xml">
+<!ENTITY DYJetsToLL_M-50_HT-2500toInf_Run2016v3      SYSTEM  "../../common/UHH2-datasets/RunII_102X_v1/2016v3/MC_DYJetsToLL_M-50_HT-2500toInf.xml">
 
 ]>
 
@@ -32,11 +39,55 @@
          <!-- tgtg -->
 
 
-        <InputData Lumi="10199051" NEventsMax="-1" Type="MC" Version="TTJets_TuneCUETP8M1_Run2016v3" Cacheable="False">
-        &TTJets_TuneCUETP8M1_Run2016v3;
+        <InputData Lumi="56942.77321" NEventsMax="-1" Type="MC" Version="DYJetsToLL_M-50_HT-70to100_Run2016v3" Cacheable="False">
+        &DYJetsToLL_M-50_HT-70to100_Run2016v3;
           <InputTree Name="AnalysisTree" />
           <OutputTree Name="AnalysisTree" />
         </InputData>
+
+        <InputData Lumi="74473.03935" NEventsMax="-1" Type="MC" Version="DYJetsToLL_M-50_HT-100to200_Run2016v3" Cacheable="False">
+        &DYJetsToLL_M-50_HT-100to200_Run2016v3;
+          <InputTree Name="AnalysisTree" />
+          <OutputTree Name="AnalysisTree" />
+        </InputData>
+
+        <InputData Lumi="233654.8002" NEventsMax="-1" Type="MC" Version="DYJetsToLL_M-50_HT-200to400_Run2016v3" Cacheable="False">
+        &DYJetsToLL_M-50_HT-200to400_Run2016v3;
+          <InputTree Name="AnalysisTree" />
+          <OutputTree Name="AnalysisTree" />
+        </InputData>
+
+        <InputData Lumi="1713470.93" NEventsMax="-1" Type="MC" Version="DYJetsToLL_M-50_HT-400to600_Run2016v3" Cacheable="False">
+        &DYJetsToLL_M-50_HT-400to600_Run2016v3;
+          <InputTree Name="AnalysisTree" />
+          <OutputTree Name="AnalysisTree" />
+        </InputData>
+
+        <InputData Lumi="6068513.235" NEventsMax="-1" Type="MC" Version="DYJetsToLL_M-50_HT-600to800_Run2016v3" Cacheable="False">
+        &DYJetsToLL_M-50_HT-600to800_Run2016v3;
+          <InputTree Name="AnalysisTree" />
+          <OutputTree Name="AnalysisTree" />
+        </InputData>
+
+        <InputData Lumi="4291324.45" NEventsMax="-1" Type="MC" Version="DYJetsToLL_M-50_HT-800to1200_Run2016v3" Cacheable="False">
+        &DYJetsToLL_M-50_HT-800to1200_Run2016v3;
+          <InputTree Name="AnalysisTree" />
+          <OutputTree Name="AnalysisTree" />
+        </InputData>
+
+        <InputData Lumi="3942321.429" NEventsMax="-1" Type="MC" Version="DYJetsToLL_M-50_HT-1200to2500_Run2016v3" Cacheable="False">
+        &DYJetsToLL_M-50_HT-1200to2500_Run2016v3;
+          <InputTree Name="AnalysisTree" />
+          <OutputTree Name="AnalysisTree" />
+        </InputData>
+
+        <InputData Lumi="109180650.5" NEventsMax="-1" Type="MC" Version="DYJetsToLL_M-50_HT-2500toInf_Run2016v3" Cacheable="False">
+        &DYJetsToLL_M-50_HT-2500toInf_Run2016v3;
+          <InputTree Name="AnalysisTree" />
+          <OutputTree Name="AnalysisTree" />
+        </InputData>
+
+
 
 
         <UserConfig>
